@@ -1,5 +1,26 @@
 # BakersBite
 
+# How to deploy proj to github page using angular-cli-ghpages (Git Hub Pages)
+
+
+# Refer : https://www.geeksforgeeks.org/deployment-of-angular-application-using-github-pages/
+
+
+1.  npm install -g angular-cli-ghpages
+
+2.  ng build --prod --base-href "https://<username>.github.io/<repo>"    For ex. 
+
+    ng build --prod --base-href "https://omkarred.github.io/bakersbite/"  
+
+3.  ngh --dir dist/<proj_name> // This created ngh-pages branch under bakersbite repo & deploy all the code base in it.
+
+    ngh --dir dist/bakersbite tip: refer proj_name to  "defaultProject" field in angular.json file 
+
+
+4. Now refer https://github.com/omkarred/bakersbite/settings & "GitHub Pages" section & select the branch as gh-pages and folder as root
+
+5. Then open link : https://omkarred.github.io/bakersbite/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
 ## Development server
