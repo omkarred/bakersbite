@@ -1,0 +1,26 @@
+<div class="row">
+
+    <div class="col-xs-10">
+        <app-shopping-edit></app-shopping-edit>
+
+        <hr>
+
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-5">
+
+        <mat-action-list *ngFor="let ingredient of ingredients">
+            <a style="cursor: pointer;" >
+
+                <span matBadge="{{ingredient.qty}}" matBadgeOverlap="false">{{ingredient.name}}</span>
+
+
+            </a>
+            <mat-divider></mat-divider>
+        </mat-action-list>
+
+    </div>
+</div>

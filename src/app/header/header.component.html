@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- <a mat-flat-button href="#" color="primary">Recipes</a> -->
+    <!-- <a mat-stroked-button href="#" >Recipes</a> -->
+
+    <a mat-flat-button href="#" color="primary">Recipes</a>
+    <a mat-flat-button href="#" color="primary">Shopping List</a>
+
+    <span class="menu-spacer"></span>
+    <a mat-flat-button href="#" color="primary" [matMenuTriggerFor]="menulist">Manage<span class="caret"></span></a>
+
+    <mat-menu #menulist="matMenu" yPosition="below">
+        <button mat-menu-item href="#">Save</button>
+        <button mat-menu-item href="#">Edit</button>
+
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="shareList">
+        <mat-icon>share</mat-icon>
+    </button>
+    
+    <mat-menu #shareList="matMenu" yPosition="below">
+        <button mat-menu-item href="#">
+            <mat-icon>facebook</mat-icon>
+        </button>
+        <button mat-menu-item href="#">
+            <mat-icon>twitter</mat-icon>
+        </button>
+
+    </mat-menu>
+
+</mat-toolbar>
