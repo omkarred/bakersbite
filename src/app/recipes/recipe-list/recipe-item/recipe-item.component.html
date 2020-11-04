@@ -1,1 +1,14 @@
-<p>recipe-item works!</p>
+<a href="#">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{recipeItem.name}} <ngb-rating [(rate)]="recipeItem.rating" [readonly]="false" [max]="5"></ngb-rating> </mat-card-title> 
+            <mat-card-subtitle>{{recipeItem.desc}}</mat-card-subtitle>
+            <span class="menu-spacer"></span>
+            <span class="pull-right">
+                <img [src]="recipeItem.imgPath"
+                    alt="{{recipeItem.name}}" style="max-height: 50px;">
+            </span>
+        </mat-card-header>
+    </mat-card>
+    <br>
+</a>

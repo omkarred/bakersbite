@@ -19,7 +19,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge'; 
 import {MatListModule} from '@angular/material/list'; 
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 
 
@@ -46,7 +47,8 @@ import {MatInputModule} from '@angular/material/input';
     MatDividerModule,
     MatBadgeModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

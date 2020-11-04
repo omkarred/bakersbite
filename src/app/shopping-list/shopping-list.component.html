@@ -1,7 +1,7 @@
 <div class="row">
 
     <div class="col-xs-10">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit (ingredientEvt) = "amendIngredients($event)"></app-shopping-edit>
 
         <hr>
 
@@ -16,7 +16,6 @@
             <a style="cursor: pointer;" >
 
                 <span matBadge="{{ingredient.qty}}" matBadgeOverlap="false">{{ingredient.name}}</span>
-
 
             </a>
             <mat-divider></mat-divider>

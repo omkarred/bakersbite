@@ -10,10 +10,10 @@ export class RecipeListComponent implements OnInit {
 
 
   recipes:Recipe[] = [new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
-                                 "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg"),
+                        "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg"),
                                 
-                                 new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
-                                 "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg")]
+                      new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
+                        "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg")]
   constructor() { }
 
   ngOnInit(): void {
