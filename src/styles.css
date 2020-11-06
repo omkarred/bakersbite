@@ -8,3 +8,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .menu-spacer {
     flex: 1 1 auto;
   }
+
+/*works only in chrome*/
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}
