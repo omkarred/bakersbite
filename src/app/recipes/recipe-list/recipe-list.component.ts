@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from 'src/app/shared/service/recipe.service';
 import { Recipe} from './../recipe.model'
 
 @Component({
@@ -9,14 +10,40 @@ import { Recipe} from './../recipe.model'
 export class RecipeListComponent implements OnInit {
 
 
-  recipes:Recipe[] = [new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
-                        "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg"),
-                                
-                      new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
-                        "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg")]
-  constructor() { }
+  onClickNewRecipe = false;
+  recipes:Recipe[];
+  IsAlertShow= false;
+  
+  constructor( private recipeService:RecipeService) { }
 
   ngOnInit(): void {
+    this.recipes = this.recipeService.getAllRecipes();
   }
 
+  selectRecipe(recipe:Recipe) {
+    if(recipe != null) {
+      this.recipeService.emitSelectedRecipeEvt(recipe);
+    }
+
+  }
+  
+
+  showNewRecipePanel() {
+    this.onClickNewRecipe = true;
+
+  }
+
+  addRecipe(recipe:Recipe) {
+
+    this.recipeService.addNewRecipe(recipe);
+    console.log("Done");
+    console.log(this.recipeService.getAllRecipes())
+    this.onClickNewRecipe = false;
+    this.IsAlertShow=true;
+
+  }
+
+  closeAlert() {
+    this.IsAlertShow = false;
+  }
 }

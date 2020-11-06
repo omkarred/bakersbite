@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IngredientEvent } from '../shared/ingredient.event';
 import { Ingredient } from './../shared/ingredient.model'
+import { ShoppingService } from '../shared/service/shopping.service'
 
 @Component({
   selector: 'app-shopping-list',
@@ -10,37 +11,24 @@ import { Ingredient } from './../shared/ingredient.model'
 export class ShoppingListComponent implements OnInit {
 
   public ingredients: Ingredient[] = []; //[new Ingredient("Apples", 5), new Ingredient("Cherries", 3)]
-  constructor() { }
+  constructor(private shoppingSerive: ShoppingService) {
+
+    shoppingSerive.ingredientEvt.subscribe((iEvt: IngredientEvent) => this.onIngredientEvt(iEvt))
+  }
 
   ngOnInit(): void {
+    this.ingredients = this.shoppingSerive.getAllIngredients();
   }
 
 
-  amendIngredients(ingredientEvent: IngredientEvent) {
+  onIngredientEvt(ingredientEvent: IngredientEvent) {
 
-    if(ingredientEvent.action === "add") { this.addToIngredients(ingredientEvent.ingredient)}
-    else if(ingredientEvent.action === "remove") { this.remToIngredients(ingredientEvent.ingredient)}
-
-  }
-
-  addToIngredients(ingredient: Ingredient) {
-
-    const index = this.ingredients.findIndex(x=> x.name === ingredient.name);
-    
-    if (index == -1) {
-      this.ingredients.push(ingredient);
-    }else{
-      const ing:Ingredient = this.ingredients[index]; 
-      ing.qty = parseInt(ing.qty.toString()) + parseInt(ingredient.qty.toString()); 
+    if (ingredientEvent.action === "add") {
+      this.shoppingSerive.addToIngredients(ingredientEvent.ingredient);
+    }
+    else if (ingredientEvent.action === "remove") { 
+      this.shoppingSerive.remFromIngredients(ingredientEvent.ingredient) 
     }
 
-  }
-
-  remToIngredients(ingredient: Ingredient) {
- 
-    const index = this.ingredients.findIndex(x=> x.name === ingredient.name);
-    if (index > -1) {
-      this.ingredients.splice(index, 1);
-    }
   }
 }

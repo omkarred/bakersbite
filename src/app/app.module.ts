@@ -21,8 +21,12 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list'; 
 import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import {MatExpansionModule} from '@angular/material/expansion';
 
-
+import {RecipeService} from './shared/service/recipe.service'
+import {ReversePipe} from './shared/reverse.pipe';
+import { FooterComponent } from './footer/footer.component'
+import {ShoppingService} from './shared/service/shopping.service'
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RecipeListComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    ReversePipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +54,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatBadgeModule,
     MatListModule,
     MatInputModule,
-    NgbModule
+    NgbModule,
+    MatExpansionModule
   ],
-  providers: [],
+  providers: [RecipeService, ShoppingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

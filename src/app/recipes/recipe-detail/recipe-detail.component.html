@@ -1,16 +1,18 @@
 <br>
+
+<ng-container *ngIf="selectedRecipe">
 <div class="row">
     <div class="col-xs-12">
 
-        <img src="https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg"
-             alt="page" class="img-responsive"/>
+        <img [src]="selectedRecipe.imgPath"
+             alt="{{selectedRecipe.name}}" class="img-responsive"/>
     </div>
           
 </div>
 
 <div class="row">
     <div class="col-xs-12">
-         Idli Sambar
+         {{selectedRecipe.name}}
     </div>
 </div>
 
@@ -20,5 +22,30 @@
 
         <mat-menu #recipeMenu="matMenu"><mat-icon>save</mat-icon></mat-menu>
         <mat-menu #recipeMenu="matMenu"><mat-icon>edit</mat-icon></mat-menu>
+        <button mat-raised-button type="button" color="primary" (click)="addIngredientsToShoppingList()">Add Ingredients to shopping list</button>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Ingredient</th>
+              <th scope="col">Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of selectedRecipe.ingredients; let i=index">
+              <th scope="row">{{ i +1}}</th>
+              <td>{{item.name}}</td>
+              <td>{{ item.qty | number }}</td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+</ng-container>
+

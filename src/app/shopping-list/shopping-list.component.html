@@ -1,13 +1,13 @@
 <div class="row">
 
     <div class="col-xs-10">
-        <app-shopping-edit (ingredientEvt) = "amendIngredients($event)"></app-shopping-edit>
+        <app-shopping-edit></app-shopping-edit>
 
         <hr>
 
     </div>
 </div>
-
+<!-- 
 <div class="row">
 
     <div class="col-sm-5">
@@ -21,5 +21,26 @@
             <mat-divider></mat-divider>
         </mat-action-list>
 
+    </div>
+</div> -->
+
+<div class="row">
+    <div class="col-xs-7">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Ingredient</th>
+              <th scope="col">Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of ingredients; let i=index">
+              <th scope="row">{{ i +1}}</th>
+              <td>{{item.name}}</td>
+              <td>{{ item.qty | number }}</td>
+            </tr>
+            </tbody>
+          </table>
     </div>
 </div>
