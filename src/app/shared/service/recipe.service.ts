@@ -8,7 +8,13 @@ export class RecipeService {
     recipes:Recipe[] = [new Recipe("Idli Sambar","Idli Sambar is a delicious south indian dish",
     "https://previews.agefotostock.com/previewimage/medibigoff/a0d151893ba8fb69665bb344c1c78942/esy-033597286.jpg"),
             
-  new Recipe("Vada Sambar","Vada Sambar is a delicious south indian dish",
+    //  new Recipe("Donuts","Donut is a delicious, mouth watering sweet dish",
+    // "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/donuts/DNK00834_VanillaFrostedSprinklesDonut_500px@2x.png"),
+
+    new Recipe("Pacific Veg Pizza","Pizza is a delicious dish",
+    "https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Waagmi_Soni/Gralic_Crust_Veggie_Pizza.jpg"),
+
+    new Recipe("Vada Sambar","Vada Sambar is a delicious south indian dish",
     "https://cdn.shopify.com/s/files/1/1337/0877/files/Medu-Vada_414ba9c7-930f-47cc-b66e-288755b41890.jpg?v=1580204628")];
 
 

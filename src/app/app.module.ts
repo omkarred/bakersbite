@@ -23,10 +23,18 @@ import {MatInputModule} from '@angular/material/input';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import {MatExpansionModule} from '@angular/material/expansion';
 
-import {RecipeService} from './shared/service/recipe.service'
 import {ReversePipe} from './shared/reverse.pipe';
 import { FooterComponent } from './footer/footer.component'
+import {ActivatedRoute} from '@angular/router/';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserNotAuthenticatedComponent } from './user-not-authenticated/user-not-authenticated.component'
+
 import {ShoppingService} from './shared/service/shopping.service'
+import {RecipeService} from './shared/service/recipe.service'
+import {AuthGuard} from './shared/service/auth-guard-service'
+import {Auth} from './shared/service/auth.service';
+import { HomePageComponent } from './home-page/home-page.component'
+
 
 @NgModule({
   declarations: [
@@ -40,6 +48,9 @@ import {ShoppingService} from './shared/service/shopping.service'
     ShoppingEditComponent,
     ReversePipe,
     FooterComponent,
+    PageNotFoundComponent,
+    UserNotAuthenticatedComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +68,7 @@ import {ShoppingService} from './shared/service/shopping.service'
     NgbModule,
     MatExpansionModule
   ],
-  providers: [RecipeService, ShoppingService],
+  providers: [RecipeService, ShoppingService, AuthGuard, Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

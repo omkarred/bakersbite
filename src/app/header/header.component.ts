@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  userName:string='';
+
+  constructor(private route:ActivatedRoute) { 
+  }
 
   ngOnInit(): void {
+
+    // this.route.params.subscribe( (params:Params) => { this.userName = params['activeuser'] ; console.log(this.route.data);});
+    // console.log("this.route.snapshot.paramMap['activeuser'];" + this.userName)
   }
   
 }

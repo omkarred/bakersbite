@@ -5,7 +5,7 @@
     <div class="col-xs-12">
 
         <img [src]="selectedRecipe.imgPath"
-             alt="{{selectedRecipe.name}}" class="img-responsive"/>
+             alt="{{selectedRecipe.name}}" class="img-responsive" style="border: 2px solid black;"/>
     </div>
           
 </div>
@@ -22,13 +22,13 @@
 
         <mat-menu #recipeMenu="matMenu"><mat-icon>save</mat-icon></mat-menu>
         <mat-menu #recipeMenu="matMenu"><mat-icon>edit</mat-icon></mat-menu>
-        <button mat-raised-button type="button" color="primary" (click)="addIngredientsToShoppingList()">Add Ingredients to shopping list</button>
+        <button mat-raised-button type="button" class="btn btn-primary" (click)="addIngredientsToShoppingList()">Add Ingredients to shopping list</button>
     </div>
 </div>
 
 <div class="row">
     <div class="col-xs-12">
-        <table class="table table-striped">
+        <table class="table table-striped table-dark">
             <thead>
             <tr>
               <th scope="col">#</th>
