@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Auth } from '../shared/service/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { Auth } from '../shared/service/auth.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private auth:Auth) { }
+  constructor(private auth:Auth, private route:Router, private activatedRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,13 @@ export class HomePageComponent implements OnInit {
   logout() {
 
     this.auth.logOut();
+  }
+
+  isSignedIn() {
+    return this.auth.isSignedIn()
+  }
+
+  signUp() {
+    this.route.navigate(["/register"], {relativeTo:this.activatedRoute});
   }
 }

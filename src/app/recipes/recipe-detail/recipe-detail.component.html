@@ -18,11 +18,12 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <button [matMenuTriggerFor]="recipeMenu">Manage Recipe <span class="caret"></span></button>
+        <button style="background-color: white; color: black;" [matMenuTriggerFor]="recipeMenu">Manage Recipe <span class="caret"></span></button>
 
         <mat-menu #recipeMenu="matMenu"><mat-icon>save</mat-icon></mat-menu>
         <mat-menu #recipeMenu="matMenu"><mat-icon>edit</mat-icon></mat-menu>
-        <button mat-raised-button type="button" class="btn btn-primary" (click)="addIngredientsToShoppingList()">Add Ingredients to shopping list</button>
+        <button mat-raised-button type="button" class="btn btn-primary" style="background-color: white; color: black;" (click)="addIngredientsToShoppingList()">Add Ingredients to shopping list</button>
+        <button mat-raised-button type="button" class="btn btn-primary" style="background-color: white; color: black;" (click)="onEditClick()">Edit Recipe</button>
     </div>
 </div>
 

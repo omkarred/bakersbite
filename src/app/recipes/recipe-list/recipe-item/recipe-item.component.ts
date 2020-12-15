@@ -9,6 +9,9 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
 
   @Input("item") recipeItem: Recipe; 
+  @Input() index:Number;
+  highlightCardColor:boolean = true;
+  
   constructor() { }
 
   ngOnInit(): void {

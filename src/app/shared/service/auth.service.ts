@@ -24,4 +24,9 @@ export class Auth {
     logOut(){
         this.isLoggedIn = false;
     }
+
+
+    isSignedIn():Boolean {
+        return this.isLoggedIn;
+    }
 }

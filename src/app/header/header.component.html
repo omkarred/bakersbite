@@ -1,20 +1,21 @@
-<mat-toolbar color="primary">
+<mat-toolbar style="background-color: black;">
 
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+    <button style="background-color: black; color: white;" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)= "getHomePage()">
+        <mat-icon>home</mat-icon>
     </button>
 
     <!-- <a mat-flat-button href="#" color="primary">Recipes</a> -->
     <!-- <a mat-stroked-button href="#" >Recipes</a> -->
 
-    <a mat-flat-button routerLink="/recipes"  routerLinkActive="active" color="primary" >Recipes</a>
-    <a mat-flat-button [routerLink]="['/cart']" routerLinkActive="active" color="primary">Shopping List</a>
+    <a mat-flat-button routerLink="/recipes"  routerLinkActive="active" style="background-color: black; color: white;">Recipes</a>
+    <a mat-flat-button [routerLink]="['/cart']" routerLinkActive="active" style="background-color: black; color: white;">Shopping List</a>
     
     <span class="menu-spacer"></span>
     <label>Hello {{userName}}</label>
-    <a mat-flat-button href="#" color="primary" [matMenuTriggerFor]="menulist">Manage<span class="caret"></span></a>
+    <a mat-flat-button href="#" [matMenuTriggerFor]="menulist" style="background-color: black; color: white;">Manage<span class="caret"></span></a>
+    <a mat-flat-button href="#"[routerLink]="['/register']" style="background-color: black; color: white;">Register</a>
 
-    <mat-menu #menulist="matMenu" yPosition="below">
+    <mat-menu #menulist="matMenu" yPosition="below" style="background-color: white;">
         <button mat-menu-item href="#">Save</button>
         <button mat-menu-item href="#">Edit</button>
 

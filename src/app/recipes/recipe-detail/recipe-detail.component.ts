@@ -11,25 +11,26 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  selectedRecipe : Recipe;
+  selectedRecipe: Recipe;
 
-  constructor(private recipeService:RecipeService, private shoppingService:ShoppingService, 
-              private router:Router,
-              private activatedRouter:ActivatedRoute) {
-    this.recipeService.selectedRecipeEvt.subscribe(
-      (r:Recipe) =>  { if (r != undefined) {this.selectedRecipe = r }}
-    )
-   }
+  constructor(private recipeService: RecipeService, private shoppingService: ShoppingService,
+    private router: Router,
+    private activatedRouter: ActivatedRoute) {
+      this.recipeService.selectedRecipeEvt.subscribe(
+        (r: Recipe) => {  console.log(r); console.log("ffffff"); if (r != undefined) { this.selectedRecipe = r } }
+      )
+  }
 
   ngOnInit(): void {
-   
+
+    console.log("hello")
+    
   }
 
 
   addIngredientsToShoppingList() {
-    console.log(this.selectedRecipe.ingredients )
     // let arr = this.selectedRecipe.ingredients.slice(); 
-    this.shoppingService.addAllIngredients(this.selectedRecipe.ingredients );
+    this.shoppingService.addAllIngredients(this.selectedRecipe.ingredients);
     // this.router.navigate(['cart'],{relativeTo:this.activatedRouter}) /// This is for relative path 
     this.router.navigate(["/cart"]);
 

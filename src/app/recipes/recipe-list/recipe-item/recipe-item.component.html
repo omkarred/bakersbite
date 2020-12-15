@@ -1,5 +1,6 @@
-<a >
-    <mat-card >
+<a style="cursor: pointer;" routerLink= "recipe-detail" routerLinkActive="active">
+    <div>
+    <mat-card> <!-- [ngStyle]="{'background-color': highlightCardColor === true ? 'red' : 'blue'}" -->
         <mat-card-header>
             <mat-card-title>{{recipeItem.name}} <ngb-rating [(rate)]="recipeItem.rating" [readonly]="false" [max]="5"></ngb-rating> </mat-card-title> 
             <mat-card-subtitle>{{recipeItem.desc}}</mat-card-subtitle>
@@ -11,4 +12,5 @@
         </mat-card-header>
     </mat-card>
     <br>
+</div>
 </a>

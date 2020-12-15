@@ -73,7 +73,7 @@
 
     <br>
     <div class="col-xs-12" style="height: calc(30vw - 20px); overflow-y: auto;">
-        <app-recipe-item *ngFor="let recipe of recipes | reverse" [item]="recipe" (click)="selectRecipe(recipe)">
+        <app-recipe-item *ngFor="let recipe of recipes | reverse; let i =index" [item]="recipe" [index]="i" (click)="selectRecipe(recipe)">
         </app-recipe-item>
     </div>
 </div>

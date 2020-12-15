@@ -33,7 +33,14 @@ import {ShoppingService} from './shared/service/shopping.service'
 import {RecipeService} from './shared/service/recipe.service'
 import {AuthGuard} from './shared/service/auth-guard-service'
 import {Auth} from './shared/service/auth.service';
-import { HomePageComponent } from './home-page/home-page.component'
+import {Registration} from './shared/service/register.service'
+
+import { HomePageComponent } from './home-page/home-page.component';
+import { EmptyRecipeDetailComponent } from './recipes/empty-recipe-detail/empty-recipe-detail.component';
+import { EditRecipeComponent } from './recipes/edit-recipe/edit-recipe.component';
+import { RegisterComponent } from './register/register.component'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -51,6 +58,9 @@ import { HomePageComponent } from './home-page/home-page.component'
     PageNotFoundComponent,
     UserNotAuthenticatedComponent,
     HomePageComponent,
+    EmptyRecipeDetailComponent,
+    EditRecipeComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,9 +76,11 @@ import { HomePageComponent } from './home-page/home-page.component'
     MatListModule,
     MatInputModule,
     NgbModule,
-    MatExpansionModule
+    MatExpansionModule, 
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [RecipeService, ShoppingService, AuthGuard, Auth],
+  providers: [RecipeService, ShoppingService, AuthGuard, Auth, Registration],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

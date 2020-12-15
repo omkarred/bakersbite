@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   userName:string='';
 
-  constructor(private route:ActivatedRoute) { 
+  constructor(private route:ActivatedRoute, private router:Router) { 
   }
 
   ngOnInit(): void {
@@ -19,4 +19,10 @@ export class HeaderComponent implements OnInit {
     // console.log("this.route.snapshot.paramMap['activeuser'];" + this.userName)
   }
   
+
+  getHomePage(){
+
+    console.log("hello")
+    this.router.navigate(['/'], {relativeTo:this.route});
+  }
 }
